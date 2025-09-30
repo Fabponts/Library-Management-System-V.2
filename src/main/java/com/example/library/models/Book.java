@@ -14,6 +14,9 @@ public class Book {
      private String genre;
      private String description;
 
+     @Enumerated(EnumType.STRING)
+     private BookStatus status = BookStatus.AVAILABLE;
+
      @ManyToOne
      @JoinColumn(name = "user_id")
      private User user;
