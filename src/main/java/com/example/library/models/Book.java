@@ -14,6 +14,10 @@ public class Book {
      private String genre;
      private String description;
 
+     @ManyToOne
+     @JoinColumn(name = "user_id")
+     private User user;
+
      //Getters and Setters
     public Integer getId() {
         return id;
