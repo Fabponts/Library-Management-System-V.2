@@ -22,7 +22,7 @@ public class Book {
      private User user;
 
      //Getters and Setters
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
     public String getTitle() {
