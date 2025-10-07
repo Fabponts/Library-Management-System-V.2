@@ -1,5 +1,6 @@
 package com.example.library.services;
 
+import com.example.library.models.Loan;
 import com.example.library.models.User;
 import com.example.library.repositories.UserRepository;
 import org.springframework.stereotype.Service;
@@ -29,5 +30,4 @@ public class UserService {
     public void deleteUserById(Long id){
         userRepository.deleteById(id);
     }
-
 }
