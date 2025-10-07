@@ -1,9 +1,11 @@
 package com.example.library.services;
 
 import com.example.library.models.Loan;
+import com.example.library.models.LoanStatus;
 import com.example.library.repositories.LoanRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,6 +32,17 @@ public class LoanService {
 
     public void deleteLoanById(Integer id ){
         loanRepository.deleteById(id);
+    }
+    public Loan updateStatus(Integer loanId, LoanStatus status){
+        Loan loan = loanRepository.findById(loanId)
+                .orElseThrow(()-> new RuntimeException("Loan not found"));
+
+        if(status == LoanStatus.RETURNED){
+            loan.setReturnDate(LocalDate.now());
+        }
+
+        loan.setStatus(status);
+        return loanRepository.save(loan);
     }
 
 }
