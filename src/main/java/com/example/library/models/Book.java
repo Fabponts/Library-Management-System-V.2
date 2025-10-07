@@ -1,6 +1,8 @@
 package com.example.library.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "TB_BOOKS")
@@ -8,12 +10,24 @@ public class Book {
      @Id
      @GeneratedValue(strategy = GenerationType.AUTO)
      private Long id;
-     private String title;
-     private String author;
-     private String publisher;
-     private String genre;
-     private String description;
 
+     @NotBlank(message = "You must insert a title")
+     @Size(min = 2, message = "The title must be at least 2 characters")
+     private String title;
+
+     @NotBlank(message = "You must insert a author")
+     @Size(min = 2, message = "The author's name must be at least 2 characters")
+     private String author;
+
+     @NotBlank(message = "You must insert a publisher")
+     @Size(max = 50, message = "The publisher must be at least 2 characters")
+     private String publisher;
+
+     @NotBlank(message = "You must insert a genre")
+     @Size(max = 50, message = "The genre must be at least 2 characters")
+     private String genre;
+
+     private String description;
      @Enumerated(EnumType.STRING)
      private LoanStatus status = LoanStatus.AVAILABLE;
 

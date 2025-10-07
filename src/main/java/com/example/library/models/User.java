@@ -1,6 +1,9 @@
 package com.example.library.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +15,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotBlank(message = " You must insert a name")
+    @Size(min = 1, max = 20)
     private String firstName;
+
+    @NotBlank(message = " You must insert a Lastname")
+    @Size(min = 1, max = 20)
     private String lastName;
+
+    @NotBlank(message = " You must insert a email")
+    @Email(message = "Invalid format")
     private String email;
 
     @OneToMany(mappedBy = "user")
