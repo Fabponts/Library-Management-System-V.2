@@ -2,7 +2,6 @@ package com.example.library.controllers;
 
 import com.example.library.models.User;
 import com.example.library.services.UserService;
-import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -15,7 +15,7 @@ public class Book {
      private String description;
 
      @Enumerated(EnumType.STRING)
-     private BookStatus status = BookStatus.AVAILABLE;
+     private LoanStatus status = LoanStatus.AVAILABLE;
 
      @ManyToOne
      @JoinColumn(name = "user_id")

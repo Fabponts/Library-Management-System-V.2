@@ -20,7 +20,7 @@ public class BookController {
     }
 
     @PostMapping
-    public Book CreateBook(@RequestBody Book book){
+    public Book createBook(@RequestBody Book book){
         return bookService.saveNewBook(book);
     }
 
