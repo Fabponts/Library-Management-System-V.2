@@ -17,6 +17,7 @@ After running the project, access it at:
 👉 http://localhost:8081/swagger-ui.html
 
 ## Project Structure
+ ```bash
 src/
  ├── main/
  │    ├── java/com/example/library/
@@ -29,6 +30,7 @@ src/
  │         ├── application.properties
  │         └── data.sql
  └── test/                    → Unit tests
+ ```
 
 ## Features 
 - 👤 User Management: Register, list, and manage library users.
@@ -49,17 +51,19 @@ src/
 - Maven Installed
 
 ### Steps
- - Clone the repository: 
-  git clone https://github.com/yourusername/library-system.git
+ ```bash
+# Clone the repository
+git clone https://github.com/yourusername/library-system.git
 
-- Navigate to the project directory: 
+# Navigate to the project directory
 cd library-system
 
-- Build the project:
+# Build the project
 mvn clean install
 
-- Run the application:
-  mvn spring-boot:run
+# Run the application
+mvn spring-boot:run
+```
 
 ## Next Updates
 The project is still under active development:
@@ -75,10 +79,13 @@ The project is still under active development:
 This project is licensed under the MIT License — feel free to use, modify, and share it.
 
 ## Creator 
+ ```bash
 Fabricio Pontes
-
 
 fabriciopontes02.fa@gmail.com
 
-
 https://github.com/Fabponts
+
+
+ ```
+
