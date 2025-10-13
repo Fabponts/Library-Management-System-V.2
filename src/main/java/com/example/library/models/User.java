@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "TB_USERS")
@@ -15,36 +16,18 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank(message = " You must insert a name")
-    @Size(min = 1, max = 20)
-    private String firstName;
-
-    @NotBlank(message = " You must insert a Lastname")
-    @Size(min = 1, max = 20)
-    private String lastName;
-
     @NotBlank(message = " You must insert a email")
     @Email(message = "Invalid format")
     private String email;
 
+    @NotBlank(message = "You must insert a password")
+    @Size(min = 6, max = 20)
+    private String password;
+
+    private Set<Role> roles;
+
     @OneToMany(mappedBy = "user")
     private List<Book> books = new ArrayList<>();
-
-    public void setFirstName(String name){
-        this.firstName = name;
-    }
-
-    public String getFirstName(){
-        return this.firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName){
-        this.lastName = lastName;
-    }
 
     public void setEmail(String email){
         this.email = email;
