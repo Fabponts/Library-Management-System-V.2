@@ -1,5 +1,6 @@
 package com.example.library.controllers;
 
+import com.example.library.DTO.UserDTO;
 import com.example.library.models.User;
 import com.example.library.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ public class UserController {
     }
 
     @PostMapping
-    public User createUsers(@RequestBody User user){
-        return userService.saveUser(user);
+    public User createUsers(@RequestBody UserDTO userDTO) {
+        return userService.saveUser(userDTO);
     }
 
     @GetMapping

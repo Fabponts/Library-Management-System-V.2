@@ -1,5 +1,6 @@
 package com.example.library.services;
 
+import com.example.library.DTO.UserDTO;
 import com.example.library.models.Loan;
 import com.example.library.models.User;
 import com.example.library.repositories.UserRepository;
@@ -16,7 +17,10 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User saveUser(User user){
+    public User saveUser(UserDTO userDTO){
+        User user = new User();
+        user.setEmail(userDTO.getEmail());
+        user.setPassword(userDTO.getPassword());
         return userRepository.save(user);
     }
     public List<User> showAllUsers(){
