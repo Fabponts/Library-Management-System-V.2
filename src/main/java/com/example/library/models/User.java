@@ -24,8 +24,6 @@ public class User {
     @Size(min = 6, max = 20)
     private String password;
 
-    private Set<Role> roles;
-
     @OneToMany(mappedBy = "user")
     private List<Book> books = new ArrayList<>();
 
@@ -49,11 +47,4 @@ public class User {
         this.password = password;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
 }
