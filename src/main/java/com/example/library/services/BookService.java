@@ -1,5 +1,6 @@
 package com.example.library.services;
 
+import com.example.library.DTO.BookDTO;
 import com.example.library.models.Book;
 import com.example.library.repositories.BookRepository;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,13 @@ public class BookService {
         return bookRepository.findById(id);
     }
 
-    public Book saveNewBook(Book book){
+    public Book saveNewBook(BookDTO bookDTO){
+        Book book = new Book();
+        book.setTitle(bookDTO.getTitle());
+        book.setAuthor(bookDTO.getAuthor());
+        book.setPublisher(bookDTO.getPublisher());
+        book.setGenre(bookDTO.getGenre());
+        book.setDescription(bookDTO.getDescription());
         return bookRepository.save(book);
     }
 

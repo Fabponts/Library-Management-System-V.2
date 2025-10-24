@@ -1,5 +1,6 @@
 package com.example.library.controllers;
 
+import com.example.library.DTO.BookDTO;
 import com.example.library.models.Book;
 import com.example.library.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ public class BookController {
     }
 
     @PostMapping
-    public Book createBook(@RequestBody Book book){
-        return bookService.saveNewBook(book);
+    public Book createBook(@RequestBody BookDTO bookDTO){
+        return bookService.saveNewBook(bookDTO);
     }
 
     @GetMapping

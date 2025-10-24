@@ -5,6 +5,7 @@ public class BookDTO {
     private String author;
     private String publisher;
     private String genre;
+    private String description;
 
     public String getTitle() {
         return title;
@@ -36,5 +37,12 @@ public class BookDTO {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
