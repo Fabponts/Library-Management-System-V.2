@@ -5,5 +5,7 @@ CREATE TABLE TB_BOOKS (
     publisher VARCHAR(50) NOT NULL,
     genre VARCHAR(50) NOT NULL,
     description VARCHAR(255),
+    user_id BIGINT,
+    FOREIGN KEY (user_id) REFERENCES TB_USERS(id),
     status VARCHAR(50) DEFAULT 'AVAILABLE'
 );

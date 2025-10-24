@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Size;
 @Table(name = "TB_BOOKS")
 public class Book {
      @Id
-     @GeneratedValue(strategy = GenerationType.AUTO)
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Long id;
 
      @NotBlank(message = "You must insert a title")

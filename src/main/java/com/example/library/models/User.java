@@ -13,7 +13,7 @@ import java.util.Set;
 @Table(name = "TB_USERS")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = " You must insert a email")

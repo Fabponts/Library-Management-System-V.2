@@ -12,11 +12,11 @@ public class Loan {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "book_id", nullable = false)
+    @JoinColumn(name = "book_id")
     private Book book;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User borrower;
 
     private LocalDate loanDate;
@@ -85,7 +85,6 @@ public class Loan {
     public LoanStatus getStatus() {
         return status;
     }
-
     public void setStatus(LoanStatus status) {
         this.status = status;
     }
