@@ -48,14 +48,6 @@ public class LoanDTO {
         this.dueDate = dueDate;
     }
 
-    public LocalDate getReturnDate() {
-        return returnDate;
-    }
-
-    public void setReturnDate(LocalDate returnDate) {
-        this.returnDate = returnDate;
-    }
-
     public LoanStatus getStatus() {
         return status;
     }
@@ -76,4 +68,11 @@ public class LoanDTO {
         this.email = email;
     }
 
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
+    }
 }

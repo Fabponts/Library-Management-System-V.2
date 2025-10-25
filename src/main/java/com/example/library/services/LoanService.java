@@ -28,17 +28,44 @@ public class LoanService {
     }
 
     public Loan saveLoan(LoanDTO loanDTO){
-        Loan loan = new Loan();
-        loan.setLoanDate(loanDTO.getLoanDate());
-        loan.setDueDate(loanDTO.getDueDate());
-        loan.setStatus(loanDTO.getStatus());
-        loan.setReturnDate(loanDTO.getReturnDate());
-        loan.setBorrower(loanDTO.getBorrower());
-        loan.setBook(loanDTO.getBook());
+        loansDates(loanDTO);
+        loanRules(loanDTO);
+        loanDTO.setStatus(LoanStatus.BORROWED);
+        Loan loan = mapLoanDtoToEntity(loanDTO);
+
         return loanRepository.save(loan);
     }
 
     public void deleteLoanById(Integer id ){
         loanRepository.deleteById(id);
+    }
+
+    public void loanRules(LoanDTO loanDTO){
+        if (loanDTO.getReturnDate().isAfter(loanDTO.getDueDate())){
+            loanDTO.setStatus(LoanStatus.LATE);
+        }
+        if (loanDTO.getLoanDate().isAfter(loanDTO.getDueDate())){
+            throw new IllegalStateException("Invalid loan date, the due date must be after the loan date");
+        }
+        if(loanDTO.getStatus().equals(LoanStatus.BORROWED)){
+            throw new IllegalStateException("The book was already borrowed");
+        }
+    }
+
+    public Loan mapLoanDtoToEntity(LoanDTO loanDTO){
+        Loan loan = new Loan();
+        loan.setLoanDate(loanDTO.getLoanDate());
+        loan.setDueDate(loanDTO.getDueDate());
+        loan.setReturnDate(loanDTO.getReturnDate());
+        loan.setStatus(loanDTO.getStatus());
+        loan.setBorrower(loanDTO.getBorrower());
+        loan.setBook(loanDTO.getBook());
+        return loan;
+    }
+
+    public void loansDates(LoanDTO loanDTO){
+        loanDTO.setLoanDate(LocalDate.now());
+        loanDTO.setDueDate(LocalDate.now().plusMonths((1)));
+
     }
 }
