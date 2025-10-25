@@ -1,5 +1,6 @@
 package com.example.library.services;
 
+import com.example.library.DTO.LoanDTO;
 import com.example.library.models.Loan;
 import com.example.library.models.LoanStatus;
 import com.example.library.repositories.LoanRepository;
@@ -26,7 +27,14 @@ public class LoanService {
     return loanRepository.findById(id);
     }
 
-    public Loan saveLoan(Loan loan){
+    public Loan saveLoan(LoanDTO loanDTO){
+        Loan loan = new Loan();
+        loan.setLoanDate(loanDTO.getLoanDate());
+        loan.setDueDate(loanDTO.getDueDate());
+        loan.setStatus(loanDTO.getStatus());
+        loan.setReturnDate(loanDTO.getReturnDate());
+        loan.setBorrower(loanDTO.getBorrower());
+        loan.setBook(loanDTO.getBook());
         return loanRepository.save(loan);
     }
 

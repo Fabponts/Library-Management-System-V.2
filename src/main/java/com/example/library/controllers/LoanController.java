@@ -1,5 +1,6 @@
 package com.example.library.controllers;
 
+import com.example.library.DTO.LoanDTO;
 import com.example.library.models.Loan;
 import com.example.library.services.LoanService;
 import jakarta.persistence.PostUpdate;
@@ -31,8 +32,8 @@ public class LoanController {
 
     //Save a new loan
     @PostMapping
-    public Loan saveLoan(@RequestBody Loan loan){
-        return loanService.saveLoan(loan);
+    public Loan saveLoan(@RequestBody LoanDTO loanDTO) {
+        return loanService.saveLoan(loanDTO);
     }
 
     //Delete a Loan by id

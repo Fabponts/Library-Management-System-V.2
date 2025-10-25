@@ -8,6 +8,8 @@ import java.time.LocalDate;
 
 public class LoanDTO {
     private Book book;
+    private String Title;
+    private String email;
     private User borrower;
     private LocalDate loanDate;
     private LocalDate dueDate;
@@ -61,4 +63,17 @@ public class LoanDTO {
     public void setStatus(LoanStatus status) {
         this.status = status;
     }
+    public String getTitle() {
+        return Title;
+    }
+    public void setTitle(String title) {
+        Title = title;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }
