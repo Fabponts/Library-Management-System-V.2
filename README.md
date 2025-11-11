@@ -65,14 +65,6 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-## Next Updates
-The project is still under active development:
-- [ ] Implement user authentication (JWT)
-- [ ] Add email notifications for late returns
-- [ ] Improve test coverage with JUnit and Mockito
-- [ ] Dockerize the application for easy deployment
-- [ ] Integrate with a frontend (React or Angular)
-
 🚧 *Feel free to suggest new features or improvements by opening an issue!*
 
 ## License
