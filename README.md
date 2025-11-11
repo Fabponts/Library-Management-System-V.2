@@ -1,5 +1,5 @@
 # Library Management System V.2
-![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Status](https://img.shields.io/badge/status-finalizado-brightgreen)
 ![Java](https://img.shields.io/badge/Java-17%2B-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
 ![Maven](https://img.shields.io/badge/Maven-Build-blue)
